@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BookOpen, Users, Video } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import heroImg from '@/images/hero.jpeg';
 
 const HeroSection = () => {
   return (
@@ -120,6 +121,10 @@ const HeroSection = () => {
           </div>
 
           <div className="relative lg:pl-12">
+            {/* Decorative hero image (responsive) */}
+            <div className="hidden md:block mb-6">
+              <img src={heroImg} alt="Hero" className="w-full rounded-2xl object-cover max-h-80 mx-auto shadow-xl" />
+            </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-gray-600 to-black rounded-2xl blur-xl opacity-30 pulse-glow"></div>
               <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 card-hover">
