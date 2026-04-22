@@ -36,7 +36,7 @@ const HeroSection = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 fade-in-up" style={{ animationDelay: '0.6s' }}>
               <Button size="lg" className="btn-primary text-lg px-8 py-4 hover:scale-105 transition-transform duration-300" onClick={() => {
-                const section = document.getElementById('education');
+                const section = document.getElementById('shop');
                 if (section) section.scrollIntoView({ behavior: 'smooth' });
               }}>
                 Explore Content
@@ -46,7 +46,7 @@ const HeroSection = () => {
                 variant="outline"
                 size="lg"
                 className="text-blue-700 border-white hover:bg-white hover:text-black text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
-                onClick={() => window.open('http://www.youtube.com/@president_sambona', '_blank')}
+                onClick={() => window.open('https://www.instagram.com/cde_sambona1', '_blank')}
               >
                 Watch Videos
               </Button>
@@ -103,17 +103,17 @@ const HeroSection = () => {
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center bounce-gentle" style={{ animationDelay: '0.9s' }}>
                 <BookOpen className="h-8 w-8 mx-auto mb-2 text-gray-300" />
-                <div className="text-2xl font-bold">50+</div>
+                <div className="text-2xl font-bold">200+</div>
                 <div className="text-sm text-gray-300">Articles</div>
               </div>
               <div className="text-center bounce-gentle" style={{ animationDelay: '1.2s' }}>
                 <Video className="h-8 w-8 mx-auto mb-2 text-gray-300" />
-                <div className="text-2xl font-bold">25+</div>
+                <div className="text-2xl font-bold">100+</div>
                 <div className="text-sm text-gray-300">Videos</div>
               </div>
               <div className="text-center bounce-gentle" style={{ animationDelay: '1.5s' }}>
                 <Users className="h-8 w-8 mx-auto mb-2 text-gray-300" />
-                <div className="text-2xl font-bold">1K+</div>
+                <div className="text-2xl font-bold">30K+</div>
                 <div className="text-sm text-gray-300">Community</div>
               </div>
             </div>

@@ -28,39 +28,70 @@ const lessons = [
 
 const Lessons = () => {
   const navigate = useNavigate();
+  const ytVideos = [
+    '9-rPnELM0c0',
+    'r9MoZbP2-Ls',
+    'YrEGihwpUng',
+    'li0M2kz_BlY',
+  ];
+
   return (
     <section className="py-16 min-h-screen bg-muted/50">
-      <div className="container mx-auto px-4 max-w-2xl">
-        <button
-          onClick={() => navigate('/')}
-          className="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
-          aria-label="Go to Home"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M4.5 10.5V21h15V10.5" />
-          </svg>
-          Home
-        </button>
-        <h2 className="text-4xl font-bold text-center mb-10">English Lessons</h2>
-        <ul className="space-y-8">
-          {lessons.map((lesson, idx) => (
-            <li key={idx} className="bg-white rounded-xl shadow p-6 flex flex-col gap-2">
-              <div className="font-bold text-lg mb-2">{lesson.title}</div>
-              {lesson.doc && (
-                <a href={lesson.doc} download className="text-blue-600 underline">Download Lesson Document</a>
-              )}
-              {lesson.audio && (
-                <audio controls className="w-full mt-2">
-                  <source src={lesson.audio} type="audio/mp3" />
-                  Your browser does not support the audio element.
-                </audio>
-              )}
-              {lesson.notes && (
-                <pre className="bg-gray-100 rounded p-4 text-sm overflow-x-auto whitespace-pre-wrap mt-2">{lesson.notes}</pre>
-              )}
-            </li>
-          ))}
-        </ul>
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
+          <button
+            onClick={() => navigate('/')}
+            className="mb-6 flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+            aria-label="Go to Home"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M4.5 10.5V21h15V10.5" />
+            </svg>
+            Home
+          </button>
+          <h2 className="text-4xl font-bold text-center mb-6">English Lessons</h2>
+
+          <p className="text-center text-muted-foreground mb-6">Short video lessons to help learners master English topics. Watch the featured lessons below or download notes and audio for deeper study.</p>
+
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {ytVideos.map((id) => (
+              <div key={id} className="w-full rounded-lg overflow-hidden shadow">
+                <div className="aspect-w-16 aspect-h-9">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${id}`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <ul className="space-y-8">
+              {lessons.map((lesson, idx) => (
+                <li key={idx} className="bg-white rounded-xl shadow p-6 flex flex-col gap-2">
+                  <div className="font-bold text-lg mb-2">{lesson.title}</div>
+                  {lesson.doc && (
+                    <a href={lesson.doc} download className="text-blue-600 underline">Download Lesson Document</a>
+                  )}
+                  {lesson.audio && (
+                    <audio controls className="w-full mt-2">
+                      <source src={lesson.audio} type="audio/mp3" />
+                      Your browser does not support the audio element.
+                    </audio>
+                  )}
+                  {lesson.notes && (
+                    <pre className="bg-gray-100 rounded p-4 text-sm overflow-x-auto whitespace-pre-wrap mt-2">{lesson.notes}</pre>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

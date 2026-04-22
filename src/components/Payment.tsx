@@ -34,27 +34,11 @@ const Payment = () => {
       type: 'pay-per-article'
     },
     {
-      id: 'education-monthly',
-      title: 'Educational Content - Monthly',
+      id: 'education-resources',
+      title: 'Educational Resources',
       description: 'English and Shona language resources',
       price: 4.99,
       period: 'month',
-      type: 'subscription'
-    },
-    {
-      id: 'education-semiannual',
-      title: 'Educational Content - 6 Months',
-      description: 'English and Shona language resources',
-      price: 5.99,
-      period: '6 months',
-      type: 'subscription'
-    },
-    {
-      id: 'education-annual',
-      title: 'Educational Content - Annual',
-      description: 'English and Shona language resources',
-      price: 7.99,
-      period: 'year',
       type: 'subscription'
     },
     {

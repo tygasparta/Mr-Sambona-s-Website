@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, MessageCircle, } from 'lucide-react';
 
 const Footer = () => {
@@ -71,12 +72,16 @@ const Footer = () => {
           <div className="space-y-6 fade-in-up" style={{ animationDelay: '0.2s' }}>
             <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">About</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Shop</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Influence Hub</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Educational Resources</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Blog</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Contact</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">About</Link></li>
+              <li>
+                <a href="/#shop" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Products</a>
+                <ul className="pl-4 mt-2">
+                  <li><Link to="/articles" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Articles</Link></li>
+                </ul>
+              </li>
+              <li><Link to="/influence" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Influence Hub</Link></li>
+              <li><a href="/#shop" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Educational Resources</a></li>
+              <li><a href="/#contact" className="text-gray-300 hover:text-white transition-colors hover:scale-105 transform duration-200 inline-block">Contact</a></li>
             </ul>
           </div>
 
@@ -86,15 +91,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 group">
                 <Mail className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors bounce-gentle" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">sambonaronaldt@gmail.com</span>
+                <a href="mailto:sambonaronaldt@gmail.com" className="text-gray-300 group-hover:text-white transition-colors">sambonaronaldt@gmail.com</a>
               </div>
               <div className="flex items-center space-x-3 group">
                 <Phone className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors bounce-gentle" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">+263718340867</span>
+                <a href="https://wa.me/263718340867" target="_blank" rel="noopener noreferrer" className="text-gray-300 group-hover:text-white transition-colors">+263718340867</a>
               </div>
               <div className="flex items-center space-x-3 group">
                 <MapPin className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors bounce-gentle" />
-                <span className="text-gray-300 group-hover:text-white transition-colors">Zimbabwe</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Harare%2C+Zimbabwe" target="_blank" rel="noopener noreferrer" className="text-gray-300 group-hover:text-white transition-colors">Harare, Zimbabwe</a>
               </div>
             </div>
           </div>
@@ -102,10 +107,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-12 pt-8 text-center fade-in-up" style={{ animationDelay: '0.8s' }}>
           <p className="text-gray-300">
-            &copy; 2025 Ronald T. Sambona. All rights reserved. | 
-            <span className="text-gray-400"> @takudzwasambona</span> | 
-            <span className="text-gray-400"> ronaldtsambona</span> | 
-            <span className="text-gray-400"> sambona</span>
+            ©️ 2025 - 2045 Ronald T. Sambona. All rights reserved. | <span className="text-gray-400">@ronaldtakudzwasambona</span> | <span className="text-gray-400">ronaldtsambona</span> | <span className="text-gray-400">sambona</span>
             <br />
             <span className="block mt-4 text-2xl font-bold text-green-400" style={{ fontFamily: 'monospace' }}>
               {'<Developed by: Tungasonics dEv Team />'}

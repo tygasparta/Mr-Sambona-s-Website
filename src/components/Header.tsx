@@ -1,14 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Menu, ShoppingCart, User, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-} from '@/components/ui/dropdown-menu';
+import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 const Header = () => {
   const socialLinks = [
@@ -30,12 +22,7 @@ const Header = () => {
       icon: Facebook,
       color: 'hover:text-blue-500' 
     },
-    { 
-      name: 'YouTube', 
-      url: 'http://www.youtube.com/@president_sambona', 
-      icon: Youtube,
-      color: 'hover:text-red-500' 
-    },
+    
   ];
 
   return (
@@ -48,11 +35,14 @@ const Header = () => {
           </Link>
         </div>
 
-        <nav className="hidden md:flex items-center space-x-6 fade-in-up">
+        <nav className="flex items-center space-x-6 fade-in-up">
           <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Home</a>
+
+          <Link to="/media" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Media & Interviews</Link>
+
           <a href="#gallery" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Gallery</a>
           <a href="#shop" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Influence Hub</a>
-          <a href="#education" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Articles</a>
+          <Link to="/articles" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Articles</Link>
           <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">About</a>
           <Link to="/lessons" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">English Lessons</Link>
         </nav>
