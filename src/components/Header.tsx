@@ -43,7 +43,7 @@ const Header = () => {
           <Link to="/media" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Media & Interviews</Link>
 
           <a href="#gallery" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Gallery</a>
-          <a href="#shop" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Influence Hub</a>
+          <Link to="/influence" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Influence Hub</Link>
           <Link to="/articles" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Articles</Link>
           <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">About</a>
           <Link to="/lessons" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">English Lessons</Link>
@@ -101,7 +101,7 @@ const Header = () => {
               <Link to="/" onClick={() => setOpen(false)} className="text-foreground font-medium">Home</Link>
               <Link to="/media" onClick={() => setOpen(false)} className="text-foreground font-medium">Media & Interviews</Link>
               <a href="#gallery" onClick={() => setOpen(false)} className="text-foreground font-medium">Gallery</a>
-              <a href="#shop" onClick={() => setOpen(false)} className="text-foreground font-medium">Influence Hub</a>
+              <Link to="/influence" onClick={() => setOpen(false)} className="text-foreground font-medium">Influence Hub</Link>
               <Link to="/articles" onClick={() => setOpen(false)} className="text-foreground font-medium">Articles</Link>
               <a href="#about" onClick={() => setOpen(false)} className="text-foreground font-medium">About</a>
               <Link to="/lessons" onClick={() => setOpen(false)} className="text-foreground font-medium">English Lessons</Link>
