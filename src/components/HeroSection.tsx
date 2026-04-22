@@ -121,41 +121,8 @@ const HeroSection = () => {
           </div>
 
           <div className="relative lg:pl-12">
-            {/* Decorative hero image (responsive) */}
-            <div className="hidden md:block mb-6">
-              <img src={heroImg} alt="Hero" className="w-full rounded-2xl object-cover max-h-80 mx-auto shadow-xl" />
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-gray-600 to-black rounded-2xl blur-xl opacity-30 pulse-glow"></div>
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 card-hover">
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <div className="w-48 h-48 mx-auto mb-4 flex items-center justify-center">
-                      <Avatar className="w-48 h-48 border-4 border-blue-400 shadow-lg rounded-none bg-transparent">
-                        <AvatarImage src="/profilepic.jpg" alt="Ronald T. Sambona" className="object-cover w-full h-full rounded-none" />
-                        <AvatarFallback className="rounded-none">RT</AvatarFallback>
-                      </Avatar>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">Ronald T. Sambona</h3>
-                    <p className="text-gray-300">Educator • Journalist • Women's Advocate</p>
-                  </div>
-                  
-                  <div className="space-y-4 text-sm">
-                    <div className="flex items-start space-x-3 fade-in-up" style={{ animationDelay: '1.8s' }}>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0 pulse-glow"></div>
-                      <p>Dedicated to promoting equitable education and empowering women</p>
-                    </div>
-                    <div className="flex items-start space-x-3 fade-in-up" style={{ animationDelay: '2.1s' }}>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0 pulse-glow"></div>
-                      <p>Content creator focusing on socio-economic issues</p>
-                    </div>
-                    <div className="flex items-start space-x-3 fade-in-up" style={{ animationDelay: '2.4s' }}>
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0 pulse-glow"></div>
-                      <p>Public speaker and educational advocate</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="w-full h-[420px] md:h-[520px] lg:h-[640px] overflow-hidden rounded-2xl shadow-xl">
+              <img src={heroImg} alt="Hero" className="w-full h-full object-cover object-center" />
             </div>
           </div>
         </div>
