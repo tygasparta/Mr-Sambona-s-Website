@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle, Menu, X } from 'lucide-react';
 
 const Header = () => {
   const socialLinks = [
@@ -25,6 +25,8 @@ const Header = () => {
     
   ];
 
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 pulse-glow">
       <div className="container flex h-16 items-center justify-between">
@@ -35,7 +37,7 @@ const Header = () => {
           </Link>
         </div>
 
-        <nav className="flex items-center space-x-6 fade-in-up">
+        <nav className="hidden md:flex items-center space-x-6 fade-in-up">
           <a href="#home" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Home</a>
 
           <Link to="/media" className="text-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-200">Media & Interviews</Link>
@@ -48,9 +50,8 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4 fade-in-up">
-          {/* Social Media Links */}
-          <div className="hidden lg:flex items-center space-x-2">
-            {socialLinks.map((social, idx) => (
+          <div className="hidden md:flex items-center space-x-2">
+            {socialLinks.map((social) => (
               social.name === 'WhatsApp' ? (
                 <a
                   key={social.name}
@@ -79,8 +80,50 @@ const Header = () => {
               )
             ))}
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden p-2 rounded-md hover:bg-gray-100/10 focus:outline-none"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="h-6 w-6 text-foreground" /> : <Menu className="h-6 w-6 text-foreground" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu panel */}
+      {open && (
+        <div className="md:hidden bg-background/95 border-t shadow-md">
+          <div className="container px-4 py-4">
+            <div className="flex flex-col space-y-3">
+              <Link to="/" onClick={() => setOpen(false)} className="text-foreground font-medium">Home</Link>
+              <Link to="/media" onClick={() => setOpen(false)} className="text-foreground font-medium">Media & Interviews</Link>
+              <a href="#gallery" onClick={() => setOpen(false)} className="text-foreground font-medium">Gallery</a>
+              <a href="#shop" onClick={() => setOpen(false)} className="text-foreground font-medium">Influence Hub</a>
+              <Link to="/articles" onClick={() => setOpen(false)} className="text-foreground font-medium">Articles</Link>
+              <a href="#about" onClick={() => setOpen(false)} className="text-foreground font-medium">About</a>
+              <Link to="/lessons" onClick={() => setOpen(false)} className="text-foreground font-medium">English Lessons</Link>
+
+              <div className="pt-2 border-t mt-2 flex items-center space-x-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-2 rounded-full transition-all duration-300 ${social.color} hover:scale-110 bounce-gentle bg-white/5`}
+                    title={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
